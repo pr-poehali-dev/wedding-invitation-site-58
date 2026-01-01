@@ -84,8 +84,9 @@ export default function Index() {
     <div className="min-h-screen bg-gradient-to-b from-background via-secondary/20 to-background">
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center px-4 py-20 overflow-hidden">
-        {/* Eucalyptus decoration */}
+        {/* Eucalyptus decorations */}
         <div className="absolute top-0 left-0 w-[768px] h-[768px] bg-[url('https://cdn.poehali.dev/files/5.png')] bg-contain bg-no-repeat opacity-60 animate-fade-in"></div>
+        <div className="absolute bottom-0 right-0 w-[768px] h-[768px] bg-[url('https://cdn.poehali.dev/files/6.png')] bg-contain bg-no-repeat opacity-60 animate-fade-in" style={{ animationDelay: '0.2s' }}></div>
         
         <div className="relative z-10 text-center max-w-4xl animate-fade-in">
           <div className="mb-8">
