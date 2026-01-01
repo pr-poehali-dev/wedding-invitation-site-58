@@ -85,18 +85,27 @@ export default function Index() {
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center px-4 py-20 overflow-hidden">
         {/* Botanical decorations with your images */}
-        <div className="absolute top-0 left-0 w-full h-64 bg-[url('https://cdn.poehali.dev/files/3.png')] bg-cover bg-top bg-no-repeat opacity-60 animate-fade-in"></div>
+        <div className="absolute top-0 left-0 w-full h-auto aspect-[5/1] bg-[url('https://cdn.poehali.dev/files/3.png')] bg-contain bg-top bg-center bg-no-repeat opacity-60 animate-fade-in"></div>
         <div className="absolute top-0 right-0 w-80 h-80 bg-[url('https://cdn.poehali.dev/files/1.png')] bg-contain bg-no-repeat opacity-50 animate-fade-in" style={{ animationDelay: '0.2s' }}></div>
-        <div className="absolute bottom-0 left-0 w-96 h-48 bg-[url('https://cdn.poehali.dev/files/2.png')] bg-contain bg-no-repeat opacity-45 animate-fade-in" style={{ animationDelay: '0.4s' }}></div>
-        <div className="absolute bottom-20 right-12 w-64 h-64 bg-[url('https://cdn.poehali.dev/files/1.png')] bg-contain bg-no-repeat opacity-40 scale-x-[-1] animate-fade-in" style={{ animationDelay: '0.6s' }}></div>
         
         <div className="relative z-10 text-center max-w-4xl animate-fade-in">
           <div className="mb-8">
             <Icon name="Heart" size={48} className="mx-auto text-primary mb-6" />
           </div>
-          <h1 className="text-7xl md:text-8xl font-light mb-6 text-foreground">
-            Алексей и Мария
-          </h1>
+          <div className="relative mb-6">
+            <h1 className="text-6xl md:text-7xl font-light text-foreground leading-tight">
+              Алексей
+              <br />
+              <span className="text-5xl md:text-6xl text-muted-foreground">и</span>
+              <br />
+              Мария
+            </h1>
+            {/* Wreath decoration under names */}
+            <div className="absolute -bottom-12 left-1/2 -translate-x-1/2 w-full max-w-md flex justify-center items-center">
+              <div className="w-40 h-32 bg-[url('https://cdn.poehali.dev/files/1.png')] bg-contain bg-no-repeat opacity-50 scale-x-[-1]"></div>
+              <div className="w-40 h-32 bg-[url('https://cdn.poehali.dev/files/1.png')] bg-contain bg-no-repeat opacity-50"></div>
+            </div>
+          </div>
           <div className="flex items-center justify-center gap-4 mb-8">
             <div className="h-px w-24 bg-primary/30"></div>
             <p className="text-2xl md:text-3xl text-muted-foreground font-light">
