@@ -157,8 +157,8 @@ export default function Index() {
             {/* Ceremony */}
             <Card className="animate-scale-in border-2 hover:shadow-xl transition-shadow">
               <CardHeader className="text-center">
-                <div className="mx-auto mb-4">
-                  <Icon name="Church" size={40} className="text-primary" />
+                <div className="mx-auto mb-4 w-16 h-16 flex items-center justify-center">
+                  <img src="https://cdn.poehali.dev/projects/1a403886-d3ca-4c34-bac1-0cca7bf0cb31/files/55cb38d2-71c9-4bd2-abe5-12d1f104c393.jpg" alt="ЗАГС" className="w-full h-full object-contain" />
                 </div>
                 <CardTitle className="text-3xl">Церемония</CardTitle>
               </CardHeader>
