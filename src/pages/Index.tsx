@@ -86,7 +86,7 @@ export default function Index() {
       <section className="relative min-h-screen flex items-center justify-center px-4 py-20 overflow-hidden">
         {/* Eucalyptus decorations */}
         <div className="absolute top-0 left-0 w-[768px] h-[768px] bg-[url('https://cdn.poehali.dev/files/5.png')] bg-contain bg-no-repeat opacity-60 animate-fade-in"></div>
-        <div className="absolute bottom-0 right-0 w-[512px] h-[512px] bg-[url('https://cdn.poehali.dev/files/6.png')] bg-contain bg-no-repeat opacity-60 animate-fade-in" style={{ animationDelay: '0.2s' }}></div>
+        <div className="absolute bottom-0 right-0 w-[512px] h-[512px] bg-[url('https://cdn.poehali.dev/files/6.png')] bg-contain bg-no-repeat opacity-60 animate-fade-in rotate-180" style={{ animationDelay: '0.2s' }}></div>
         
         <div className="relative z-10 text-center max-w-4xl animate-fade-in">
           <div className="mb-8">
@@ -147,8 +147,10 @@ export default function Index() {
       </section>
 
       {/* Details Section */}
-      <section className="py-20 px-4">
-        <div className="max-w-6xl mx-auto">
+      <section className="relative py-20 px-4">
+        {/* Decorative branch */}
+        <div className="absolute top-0 left-0 w-[384px] h-[384px] bg-[url('https://cdn.poehali.dev/files/6.png')] bg-contain bg-no-repeat opacity-60 rotate-180"></div>
+        <div className="max-w-6xl mx-auto relative z-10">
           <h2 className="text-5xl md:text-6xl text-center mb-16 animate-fade-in-up">
             О торжестве
           </h2>
@@ -232,8 +234,10 @@ export default function Index() {
       </section>
 
       {/* RSVP Section */}
-      <section id="rsvp" className="py-20 px-4">
-        <div className="max-w-2xl mx-auto">
+      <section id="rsvp" className="relative py-20 px-4">
+        {/* Decorative branch */}
+        <div className="absolute top-0 left-0 w-[384px] h-[384px] bg-[url('https://cdn.poehali.dev/files/6.png')] bg-contain bg-no-repeat opacity-60 rotate-180"></div>
+        <div className="max-w-2xl mx-auto relative z-10">
           <div className="text-center mb-12">
             <Icon name="Mail" size={48} className="mx-auto text-primary mb-6" />
             <h2 className="text-5xl md:text-6xl mb-4">Подтверждение участия</h2>
@@ -431,7 +435,9 @@ export default function Index() {
       </section>
 
       {/* Footer */}
-      <footer className="py-12 px-4 text-center">
+      <footer className="relative py-12 px-4 text-center">
+        {/* Decorative branch at bottom right */}
+        <div className="absolute bottom-0 right-0 w-[768px] h-[768px] bg-[url('https://cdn.poehali.dev/files/5.png')] bg-contain bg-no-repeat opacity-60 rotate-180"></div>
         <div className="max-w-2xl mx-auto">
           <Icon name="Heart" size={32} className="mx-auto text-primary mb-4" />
           <p className="text-lg text-muted-foreground mb-2">
