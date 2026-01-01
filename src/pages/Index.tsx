@@ -160,12 +160,11 @@ export default function Index() {
               </CardHeader>
               <CardContent className="text-center space-y-4">
                 <div>
-                  <p className="text-lg font-medium text-muted-foreground">15 июня 2026</p>
-                  <p className="text-2xl font-semibold mt-2">14:00</p>
+                  <p className="text-lg font-medium text-muted-foreground">4 июля 2026</p>
+                  <p className="text-2xl font-semibold mt-2">12:30</p>
                 </div>
                 <div className="pt-4 border-t">
-                  <p className="text-lg text-muted-foreground">Собор Василия Блаженного</p>
-                  <p className="text-sm text-muted-foreground mt-2">Красная площадь, 7, Москва</p>
+                  <p className="text-lg text-muted-foreground">Центр семьи "Казан"</p>
                 </div>
               </CardContent>
             </Card>
@@ -176,16 +175,15 @@ export default function Index() {
                 <div className="mx-auto mb-4">
                   <Icon name="Wine" size={40} className="text-primary" />
                 </div>
-                <CardTitle className="text-3xl">Банкет</CardTitle>
+                <CardTitle className="text-3xl">Праздник</CardTitle>
               </CardHeader>
               <CardContent className="text-center space-y-4">
                 <div>
                   <p className="text-lg font-medium text-muted-foreground">4 июля 2026</p>
-                  <p className="text-2xl font-semibold mt-2">17:00</p>
+                  <p className="text-2xl font-semibold mt-2">15:00</p>
                 </div>
                 <div className="pt-4 border-t">
-                  <p className="text-lg text-muted-foreground">Ресторан «Турандот»</p>
-                  <p className="text-sm text-muted-foreground mt-2">Тверской бульвар, 26, Москва</p>
+                  <p className="text-lg text-muted-foreground">Поляна невест</p>
                 </div>
               </CardContent>
             </Card>
@@ -223,9 +221,7 @@ export default function Index() {
                   <p className="font-medium">Белый</p>
                 </div>
               </div>
-              <p className="text-sm text-muted-foreground mt-8">
-                Пожалуйста, избегайте белого цвета — он зарезервирован для невесты
-              </p>
+
             </CardContent>
           </Card>
         </div>
@@ -394,14 +390,14 @@ export default function Index() {
               <CardContent className="space-y-3">
                 <div className="flex items-center justify-center gap-2 text-muted-foreground">
                   <Icon name="Phone" size={18} />
-                  <a href="tel:+79991234567" className="hover:text-primary transition-colors">
-                    +7 (999) 123-45-67
+                  <a href="tel:+79872919070" className="hover:text-primary transition-colors">
+                    +7 (987) 291-90-70
                   </a>
                 </div>
                 <div className="flex items-center justify-center gap-2 text-muted-foreground">
                   <Icon name="Mail" size={18} />
-                  <a href="mailto:maria@example.com" className="hover:text-primary transition-colors">
-                    maria@example.com
+                  <a href="mailto:zatula.mariavl@gmail.com" className="hover:text-primary transition-colors">
+                    zatula.mariavl@gmail.com
                   </a>
                 </div>
               </CardContent>
@@ -414,14 +410,14 @@ export default function Index() {
               <CardContent className="space-y-3">
                 <div className="flex items-center justify-center gap-2 text-muted-foreground">
                   <Icon name="Phone" size={18} />
-                  <a href="tel:+79997654321" className="hover:text-primary transition-colors">
-                    +7 (999) 765-43-21
+                  <a href="tel:+79518973039" className="hover:text-primary transition-colors">
+                    +7 (951) 897-30-39
                   </a>
                 </div>
                 <div className="flex items-center justify-center gap-2 text-muted-foreground">
                   <Icon name="Mail" size={18} />
-                  <a href="mailto:alexey@example.com" className="hover:text-primary transition-colors">
-                    alexey@example.com
+                  <a href="mailto:alexei.erepov@gmail.com" className="hover:text-primary transition-colors">
+                    alexei.erepov@gmail.com
                   </a>
                 </div>
               </CardContent>
