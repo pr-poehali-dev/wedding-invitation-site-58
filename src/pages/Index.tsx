@@ -85,25 +85,25 @@ export default function Index() {
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center px-4 py-20 overflow-hidden">
         {/* Botanical decorations with your images */}
-        <div className="absolute top-0 left-0 w-full h-auto aspect-[5/1] bg-[url('https://cdn.poehali.dev/files/3.png')] bg-contain bg-top bg-center bg-no-repeat opacity-60 animate-fade-in"></div>
+        <div className="absolute top-0 left-0 w-full bg-[url('https://cdn.poehali.dev/files/3.png')] bg-[length:100%_auto] bg-top bg-center bg-no-repeat opacity-60 animate-fade-in" style={{ height: '300px' }}></div>
         <div className="absolute top-0 right-0 w-80 h-80 bg-[url('https://cdn.poehali.dev/files/1.png')] bg-contain bg-no-repeat opacity-50 animate-fade-in" style={{ animationDelay: '0.2s' }}></div>
         
         <div className="relative z-10 text-center max-w-4xl animate-fade-in">
           <div className="mb-8">
             <Icon name="Heart" size={48} className="mx-auto text-primary mb-6" />
           </div>
-          <div className="relative mb-6">
+          <div className="relative mb-20">
             <h1 className="text-6xl md:text-7xl font-light text-foreground leading-tight">
-              Алексей
+              <div className="-ml-12">Алексей</div>
               <br />
               <span className="text-5xl md:text-6xl text-muted-foreground">и</span>
               <br />
-              Мария
+              <div className="-mr-12">Мария</div>
             </h1>
-            {/* Wreath decoration under names */}
-            <div className="absolute -bottom-12 left-1/2 -translate-x-1/2 w-full max-w-md flex justify-center items-center">
-              <div className="w-40 h-32 bg-[url('https://cdn.poehali.dev/files/1.png')] bg-contain bg-no-repeat opacity-50 scale-x-[-1]"></div>
-              <div className="w-40 h-32 bg-[url('https://cdn.poehali.dev/files/1.png')] bg-contain bg-no-repeat opacity-50"></div>
+            {/* Wreath decoration under names - forming semicircle */}
+            <div className="absolute -bottom-16 left-1/2 -translate-x-1/2 w-full max-w-xl flex justify-between items-end px-8">
+              <div className="w-48 h-40 bg-[url('https://cdn.poehali.dev/files/1.png')] bg-contain bg-no-repeat opacity-50 scale-x-[-1] rotate-[-30deg] origin-bottom-right"></div>
+              <div className="w-48 h-40 bg-[url('https://cdn.poehali.dev/files/1.png')] bg-contain bg-no-repeat opacity-50 rotate-[30deg] origin-bottom-left"></div>
             </div>
           </div>
           <div className="flex items-center justify-center gap-4 mb-8">
