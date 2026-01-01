@@ -84,11 +84,11 @@ export default function Index() {
     <div className="min-h-screen bg-gradient-to-b from-background via-secondary/20 to-background">
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center px-4 py-20 overflow-hidden">
-        <div className="absolute inset-0 flex items-center justify-center overflow-hidden">
-          <div className="text-[20rem] font-bold text-primary/5 select-none pointer-events-none whitespace-nowrap">
-            Свадьба
-          </div>
-        </div>
+        {/* Botanical corners */}
+        <div className="absolute top-0 left-0 w-64 h-64 bg-[url('https://cdn.poehali.dev/projects/1a403886-d3ca-4c34-bac1-0cca7bf0cb31/files/46592cb7-4a4a-4ddc-88e5-57199036f8df.jpg')] bg-contain bg-no-repeat opacity-40"></div>
+        <div className="absolute top-0 right-0 w-64 h-64 bg-[url('https://cdn.poehali.dev/projects/1a403886-d3ca-4c34-bac1-0cca7bf0cb31/files/46592cb7-4a4a-4ddc-88e5-57199036f8df.jpg')] bg-contain bg-no-repeat opacity-40 scale-x-[-1]"></div>
+        <div className="absolute bottom-0 left-0 w-64 h-64 bg-[url('https://cdn.poehali.dev/projects/1a403886-d3ca-4c34-bac1-0cca7bf0cb31/files/46592cb7-4a4a-4ddc-88e5-57199036f8df.jpg')] bg-contain bg-no-repeat opacity-40 scale-y-[-1]"></div>
+        <div className="absolute bottom-0 right-0 w-64 h-64 bg-[url('https://cdn.poehali.dev/projects/1a403886-d3ca-4c34-bac1-0cca7bf0cb31/files/46592cb7-4a4a-4ddc-88e5-57199036f8df.jpg')] bg-contain bg-no-repeat opacity-40 scale-[-1]"></div>
         
         <div className="relative z-10 text-center max-w-4xl animate-fade-in">
           <div className="mb-8">
@@ -207,26 +207,26 @@ export default function Index() {
           <Card className="border-2">
             <CardContent className="pt-6">
               <p className="text-xl text-muted-foreground mb-6 leading-relaxed">
-                Приветствуется нарядная одежда в романтическом стиле
+                Приветствуется элегантная одежда в классическом стиле
               </p>
               <div className="grid md:grid-cols-3 gap-6 mt-8">
                 <div>
                   <div className="w-20 h-20 rounded-full bg-primary/20 mx-auto mb-3 flex items-center justify-center">
                     <div className="w-12 h-12 rounded-full bg-primary"></div>
                   </div>
-                  <p className="font-medium">Розовый</p>
+                  <p className="font-medium">Золотистый</p>
                 </div>
                 <div>
                   <div className="w-20 h-20 rounded-full bg-secondary mx-auto mb-3 flex items-center justify-center">
                     <div className="w-12 h-12 rounded-full bg-accent"></div>
                   </div>
-                  <p className="font-medium">Лавандовый</p>
+                  <p className="font-medium">Зелёный</p>
                 </div>
                 <div>
                   <div className="w-20 h-20 rounded-full bg-muted mx-auto mb-3 flex items-center justify-center">
-                    <div className="w-12 h-12 rounded-full" style={{ backgroundColor: '#FDE1D3' }}></div>
+                    <div className="w-12 h-12 rounded-full bg-background border-2 border-primary"></div>
                   </div>
-                  <p className="font-medium">Персиковый</p>
+                  <p className="font-medium">Белый</p>
                 </div>
               </div>
               <p className="text-sm text-muted-foreground mt-8">
