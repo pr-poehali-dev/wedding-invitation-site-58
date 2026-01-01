@@ -85,7 +85,7 @@ export default function Index() {
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center px-4 py-20 overflow-hidden">
         {/* Eucalyptus decoration */}
-        <div className="absolute top-0 right-0 w-96 h-96 bg-[url('https://cdn.poehali.dev/files/4.png')] bg-contain bg-no-repeat opacity-60 animate-fade-in"></div>
+        <div className="absolute -top-4 -right-4 w-96 h-96 bg-[url('https://cdn.poehali.dev/files/4.png')] bg-contain bg-no-repeat opacity-60 animate-fade-in"></div>
         
         <div className="relative z-10 text-center max-w-4xl animate-fade-in">
           <div className="mb-8">
