@@ -147,7 +147,7 @@ export default function Index() {
       </section>
 
       {/* Details Section */}
-      <section className="relative py-20 px-4">
+      <section className="relative py-20 px-4 bg-secondary/30">
         {/* Decorative branch */}
         <div className="absolute top-0 left-0 w-[384px] h-[384px] bg-[url('https://cdn.poehali.dev/files/6.png')] bg-contain bg-no-repeat opacity-60 rotate-180"></div>
         <div className="max-w-6xl mx-auto relative z-10">
