@@ -84,11 +84,11 @@ export default function Index() {
     <div className="min-h-screen bg-gradient-to-b from-background via-secondary/20 to-background">
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center px-4 py-20 overflow-hidden">
-        {/* Botanical decorations - asymmetric */}
-        <div className="absolute top-0 right-0 w-96 h-96 bg-[url('https://cdn.poehali.dev/projects/1a403886-d3ca-4c34-bac1-0cca7bf0cb31/files/2296decf-7f1e-484e-aa99-199c21260f7f.jpg')] bg-contain bg-no-repeat opacity-50 animate-fade-in"></div>
-        <div className="absolute top-8 left-4 w-32 h-32 bg-[url('https://cdn.poehali.dev/projects/1a403886-d3ca-4c34-bac1-0cca7bf0cb31/files/e3dc2612-8439-4706-b6c1-49402c1c7114.jpg')] bg-contain bg-no-repeat opacity-40 animate-fade-in" style={{ animationDelay: '0.2s' }}></div>
-        <div className="absolute bottom-12 left-12 w-24 h-24 bg-[url('https://cdn.poehali.dev/projects/1a403886-d3ca-4c34-bac1-0cca7bf0cb31/files/70a3d24a-8d0b-410d-a0d8-3276337d0b78.jpg')] bg-contain bg-no-repeat opacity-35 animate-fade-in" style={{ animationDelay: '0.4s' }}></div>
-        <div className="absolute bottom-20 right-16 w-20 h-20 bg-[url('https://cdn.poehali.dev/projects/1a403886-d3ca-4c34-bac1-0cca7bf0cb31/files/70a3d24a-8d0b-410d-a0d8-3276337d0b78.jpg')] bg-contain bg-no-repeat opacity-30 animate-fade-in" style={{ animationDelay: '0.6s' }}></div>
+        {/* Botanical decorations with your images */}
+        <div className="absolute top-0 left-0 w-full h-64 bg-[url('https://cdn.poehali.dev/files/3.png')] bg-cover bg-top bg-no-repeat opacity-60 animate-fade-in"></div>
+        <div className="absolute top-0 right-0 w-80 h-80 bg-[url('https://cdn.poehali.dev/files/1.png')] bg-contain bg-no-repeat opacity-50 animate-fade-in" style={{ animationDelay: '0.2s' }}></div>
+        <div className="absolute bottom-0 left-0 w-96 h-48 bg-[url('https://cdn.poehali.dev/files/2.png')] bg-contain bg-no-repeat opacity-45 animate-fade-in" style={{ animationDelay: '0.4s' }}></div>
+        <div className="absolute bottom-20 right-12 w-64 h-64 bg-[url('https://cdn.poehali.dev/files/1.png')] bg-contain bg-no-repeat opacity-40 scale-x-[-1] animate-fade-in" style={{ animationDelay: '0.6s' }}></div>
         
         <div className="relative z-10 text-center max-w-4xl animate-fade-in">
           <div className="mb-8">
