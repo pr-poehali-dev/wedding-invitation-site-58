@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -49,6 +49,37 @@ export default function Index() {
     }));
   };
 
+  const [timeLeft, setTimeLeft] = useState({
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0
+  });
+
+  useEffect(() => {
+    const weddingDate = new Date('2026-06-15T14:00:00').getTime();
+
+    const timer = setInterval(() => {
+      const now = new Date().getTime();
+      const distance = weddingDate - now;
+
+      if (distance < 0) {
+        clearInterval(timer);
+        setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+        return;
+      }
+
+      setTimeLeft({
+        days: Math.floor(distance / (1000 * 60 * 60 * 24)),
+        hours: Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
+        minutes: Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)),
+        seconds: Math.floor((distance % (1000 * 60)) / 1000)
+      });
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-background via-secondary/20 to-background">
       {/* Hero Section */}
@@ -72,6 +103,37 @@ export default function Index() {
           <p className="text-xl md:text-2xl text-muted-foreground mb-12 font-light">
             Приглашаем вас разделить с нами самый важный день нашей жизни
           </p>
+          
+          {/* Countdown Timer */}
+          <div className="mb-12 animate-scale-in">
+            <div className="grid grid-cols-4 gap-4 max-w-2xl mx-auto">
+              <div className="bg-card/80 backdrop-blur-sm rounded-2xl p-6 border-2 border-primary/20">
+                <div className="text-4xl md:text-5xl font-bold text-primary mb-2">
+                  {timeLeft.days}
+                </div>
+                <div className="text-sm md:text-base text-muted-foreground">дней</div>
+              </div>
+              <div className="bg-card/80 backdrop-blur-sm rounded-2xl p-6 border-2 border-primary/20">
+                <div className="text-4xl md:text-5xl font-bold text-primary mb-2">
+                  {timeLeft.hours}
+                </div>
+                <div className="text-sm md:text-base text-muted-foreground">часов</div>
+              </div>
+              <div className="bg-card/80 backdrop-blur-sm rounded-2xl p-6 border-2 border-primary/20">
+                <div className="text-4xl md:text-5xl font-bold text-primary mb-2">
+                  {timeLeft.minutes}
+                </div>
+                <div className="text-sm md:text-base text-muted-foreground">минут</div>
+              </div>
+              <div className="bg-card/80 backdrop-blur-sm rounded-2xl p-6 border-2 border-primary/20">
+                <div className="text-4xl md:text-5xl font-bold text-primary mb-2">
+                  {timeLeft.seconds}
+                </div>
+                <div className="text-sm md:text-base text-muted-foreground">секунд</div>
+              </div>
+            </div>
+          </div>
+          
           <Button 
             size="lg" 
             className="text-lg px-8 py-6 rounded-full shadow-lg hover:shadow-xl transition-all"
