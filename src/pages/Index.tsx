@@ -1,14 +1,387 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useState } from 'react';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import { Textarea } from '@/components/ui/textarea';
+import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
+import { Checkbox } from '@/components/ui/checkbox';
+import Icon from '@/components/ui/icon';
+import { useToast } from '@/hooks/use-toast';
 
-const Index = () => {
+export default function Index() {
+  const { toast } = useToast();
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    attendance: '',
+    guestsCount: '1',
+    dietaryRestrictions: [] as string[],
+    otherDietary: '',
+    message: ''
+  });
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    toast({
+      title: "Спасибо за ответ! 💕",
+      description: "Мы получили вашу информацию и очень ждём вас на нашем празднике!",
+    });
+    setFormData({
+      name: '',
+      email: '',
+      phone: '',
+      attendance: '',
+      guestsCount: '1',
+      dietaryRestrictions: [],
+      otherDietary: '',
+      message: ''
+    });
+  };
+
+  const toggleDietary = (value: string) => {
+    setFormData(prev => ({
+      ...prev,
+      dietaryRestrictions: prev.dietaryRestrictions.includes(value)
+        ? prev.dietaryRestrictions.filter(item => item !== value)
+        : [...prev.dietaryRestrictions, value]
+    }));
+  };
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4 color-black text-black">Добро пожаловать!</h1>
-        <p className="text-xl text-gray-600">тут будет отображаться ваш проект</p>
-      </div>
+    <div className="min-h-screen bg-gradient-to-b from-background via-secondary/20 to-background">
+      {/* Hero Section */}
+      <section className="relative min-h-screen flex items-center justify-center px-4 py-20 overflow-hidden">
+        <div className="absolute inset-0 bg-[url('https://cdn.poehali.dev/projects/1a403886-d3ca-4c34-bac1-0cca7bf0cb31/files/cf8cb364-b44b-4a8a-9541-6d28439d92a1.jpg')] bg-cover bg-center opacity-10"></div>
+        
+        <div className="relative z-10 text-center max-w-4xl animate-fade-in">
+          <div className="mb-8">
+            <Icon name="Heart" size={48} className="mx-auto text-primary mb-6" />
+          </div>
+          <h1 className="text-7xl md:text-8xl font-light mb-6 text-foreground">
+            Анна & Дмитрий
+          </h1>
+          <div className="flex items-center justify-center gap-4 mb-8">
+            <div className="h-px w-24 bg-primary/30"></div>
+            <p className="text-2xl md:text-3xl text-muted-foreground font-light">
+              15 июня 2026
+            </p>
+            <div className="h-px w-24 bg-primary/30"></div>
+          </div>
+          <p className="text-xl md:text-2xl text-muted-foreground mb-12 font-light">
+            Приглашаем вас разделить с нами самый важный день нашей жизни
+          </p>
+          <Button 
+            size="lg" 
+            className="text-lg px-8 py-6 rounded-full shadow-lg hover:shadow-xl transition-all"
+            onClick={() => document.getElementById('rsvp')?.scrollIntoView({ behavior: 'smooth' })}
+          >
+            Подтвердить участие
+          </Button>
+        </div>
+      </section>
+
+      {/* Details Section */}
+      <section className="py-20 px-4">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-5xl md:text-6xl text-center mb-16 animate-fade-in-up">
+            О торжестве
+          </h2>
+          
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* Ceremony */}
+            <Card className="animate-scale-in border-2 hover:shadow-xl transition-shadow">
+              <CardHeader className="text-center">
+                <div className="mx-auto mb-4">
+                  <Icon name="Church" size={40} className="text-primary" />
+                </div>
+                <CardTitle className="text-3xl">Церемония</CardTitle>
+              </CardHeader>
+              <CardContent className="text-center space-y-4">
+                <div>
+                  <p className="text-lg font-medium text-muted-foreground">15 июня 2026</p>
+                  <p className="text-2xl font-semibold mt-2">14:00</p>
+                </div>
+                <div className="pt-4 border-t">
+                  <p className="text-lg text-muted-foreground">Собор Василия Блаженного</p>
+                  <p className="text-sm text-muted-foreground mt-2">Красная площадь, 7, Москва</p>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Reception */}
+            <Card className="animate-scale-in border-2 hover:shadow-xl transition-shadow" style={{ animationDelay: '0.1s' }}>
+              <CardHeader className="text-center">
+                <div className="mx-auto mb-4">
+                  <Icon name="Wine" size={40} className="text-primary" />
+                </div>
+                <CardTitle className="text-3xl">Банкет</CardTitle>
+              </CardHeader>
+              <CardContent className="text-center space-y-4">
+                <div>
+                  <p className="text-lg font-medium text-muted-foreground">15 июня 2026</p>
+                  <p className="text-2xl font-semibold mt-2">17:00</p>
+                </div>
+                <div className="pt-4 border-t">
+                  <p className="text-lg text-muted-foreground">Ресторан «Турандот»</p>
+                  <p className="text-sm text-muted-foreground mt-2">Тверской бульвар, 26, Москва</p>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Dress Code Section */}
+      <section className="py-20 px-4 bg-secondary/30">
+        <div className="max-w-4xl mx-auto text-center">
+          <Icon name="Shirt" size={48} className="mx-auto text-primary mb-6" />
+          <h2 className="text-5xl md:text-6xl mb-8">Дресс-код</h2>
+          <Card className="border-2">
+            <CardContent className="pt-6">
+              <p className="text-xl text-muted-foreground mb-6 leading-relaxed">
+                Приветствуется нарядная одежда в романтическом стиле
+              </p>
+              <div className="grid md:grid-cols-3 gap-6 mt-8">
+                <div>
+                  <div className="w-20 h-20 rounded-full bg-primary/20 mx-auto mb-3 flex items-center justify-center">
+                    <div className="w-12 h-12 rounded-full bg-primary"></div>
+                  </div>
+                  <p className="font-medium">Розовый</p>
+                </div>
+                <div>
+                  <div className="w-20 h-20 rounded-full bg-secondary mx-auto mb-3 flex items-center justify-center">
+                    <div className="w-12 h-12 rounded-full bg-accent"></div>
+                  </div>
+                  <p className="font-medium">Лавандовый</p>
+                </div>
+                <div>
+                  <div className="w-20 h-20 rounded-full bg-muted mx-auto mb-3 flex items-center justify-center">
+                    <div className="w-12 h-12 rounded-full" style={{ backgroundColor: '#FDE1D3' }}></div>
+                  </div>
+                  <p className="font-medium">Персиковый</p>
+                </div>
+              </div>
+              <p className="text-sm text-muted-foreground mt-8">
+                Пожалуйста, избегайте белого цвета — он зарезервирован для невесты
+              </p>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
+      {/* RSVP Section */}
+      <section id="rsvp" className="py-20 px-4">
+        <div className="max-w-2xl mx-auto">
+          <div className="text-center mb-12">
+            <Icon name="Mail" size={48} className="mx-auto text-primary mb-6" />
+            <h2 className="text-5xl md:text-6xl mb-4">Подтверждение участия</h2>
+            <p className="text-lg text-muted-foreground">
+              Пожалуйста, сообщите нам о своём решении до 1 июня 2026
+            </p>
+          </div>
+
+          <Card className="border-2 shadow-xl">
+            <CardContent className="pt-6">
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div className="space-y-2">
+                  <Label htmlFor="name">Ваше имя *</Label>
+                  <Input
+                    id="name"
+                    required
+                    value={formData.name}
+                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                    placeholder="Иван Иванов"
+                  />
+                </div>
+
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div className="space-y-2">
+                    <Label htmlFor="email">Email *</Label>
+                    <Input
+                      id="email"
+                      type="email"
+                      required
+                      value={formData.email}
+                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                      placeholder="email@example.com"
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="phone">Телефон</Label>
+                    <Input
+                      id="phone"
+                      type="tel"
+                      value={formData.phone}
+                      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                      placeholder="+7 (999) 123-45-67"
+                    />
+                  </div>
+                </div>
+
+                <div className="space-y-3">
+                  <Label>Сможете ли вы присутствовать? *</Label>
+                  <RadioGroup
+                    required
+                    value={formData.attendance}
+                    onValueChange={(value) => setFormData({ ...formData, attendance: value })}
+                  >
+                    <div className="flex items-center space-x-2">
+                      <RadioGroupItem value="yes" id="yes" />
+                      <Label htmlFor="yes" className="font-normal cursor-pointer">
+                        Да, с радостью буду!
+                      </Label>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <RadioGroupItem value="no" id="no" />
+                      <Label htmlFor="no" className="font-normal cursor-pointer">
+                        К сожалению, не смогу
+                      </Label>
+                    </div>
+                  </RadioGroup>
+                </div>
+
+                {formData.attendance === 'yes' && (
+                  <>
+                    <div className="space-y-2">
+                      <Label htmlFor="guests">Количество гостей</Label>
+                      <Input
+                        id="guests"
+                        type="number"
+                        min="1"
+                        max="5"
+                        value={formData.guestsCount}
+                        onChange={(e) => setFormData({ ...formData, guestsCount: e.target.value })}
+                      />
+                      <p className="text-sm text-muted-foreground">Включая вас</p>
+                    </div>
+
+                    <div className="space-y-3">
+                      <Label>Пищевые предпочтения и ограничения</Label>
+                      <div className="space-y-3">
+                        {[
+                          { id: 'vegetarian', label: 'Вегетарианское меню' },
+                          { id: 'vegan', label: 'Веганское меню' },
+                          { id: 'gluten-free', label: 'Без глютена' },
+                          { id: 'lactose-free', label: 'Без лактозы' },
+                          { id: 'allergies', label: 'Аллергии (укажите ниже)' }
+                        ].map((item) => (
+                          <div key={item.id} className="flex items-center space-x-2">
+                            <Checkbox
+                              id={item.id}
+                              checked={formData.dietaryRestrictions.includes(item.id)}
+                              onCheckedChange={() => toggleDietary(item.id)}
+                            />
+                            <Label htmlFor={item.id} className="font-normal cursor-pointer">
+                              {item.label}
+                            </Label>
+                          </div>
+                        ))}
+                      </div>
+                      
+                      {formData.dietaryRestrictions.length > 0 && (
+                        <div className="space-y-2 mt-4">
+                          <Label htmlFor="otherDietary">Дополнительная информация</Label>
+                          <Textarea
+                            id="otherDietary"
+                            value={formData.otherDietary}
+                            onChange={(e) => setFormData({ ...formData, otherDietary: e.target.value })}
+                            placeholder="Пожалуйста, укажите детали (например, конкретные аллергены)"
+                            rows={3}
+                          />
+                        </div>
+                      )}
+                    </div>
+                  </>
+                )}
+
+                <div className="space-y-2">
+                  <Label htmlFor="message">Пожелания молодожёнам</Label>
+                  <Textarea
+                    id="message"
+                    value={formData.message}
+                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                    placeholder="Ваши тёплые слова..."
+                    rows={4}
+                  />
+                </div>
+
+                <Button type="submit" size="lg" className="w-full text-lg py-6">
+                  <Icon name="Send" size={20} className="mr-2" />
+                  Отправить ответ
+                </Button>
+              </form>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section className="py-20 px-4 bg-secondary/30">
+        <div className="max-w-4xl mx-auto text-center">
+          <Icon name="Phone" size={48} className="mx-auto text-primary mb-6" />
+          <h2 className="text-5xl md:text-6xl mb-8">Контакты</h2>
+          <p className="text-lg text-muted-foreground mb-12">
+            Если у вас есть вопросы, мы всегда на связи
+          </p>
+          
+          <div className="grid md:grid-cols-2 gap-8">
+            <Card className="border-2">
+              <CardHeader>
+                <CardTitle className="text-2xl">Анна</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-3">
+                <div className="flex items-center justify-center gap-2 text-muted-foreground">
+                  <Icon name="Phone" size={18} />
+                  <a href="tel:+79991234567" className="hover:text-primary transition-colors">
+                    +7 (999) 123-45-67
+                  </a>
+                </div>
+                <div className="flex items-center justify-center gap-2 text-muted-foreground">
+                  <Icon name="Mail" size={18} />
+                  <a href="mailto:anna@example.com" className="hover:text-primary transition-colors">
+                    anna@example.com
+                  </a>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="border-2">
+              <CardHeader>
+                <CardTitle className="text-2xl">Дмитрий</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-3">
+                <div className="flex items-center justify-center gap-2 text-muted-foreground">
+                  <Icon name="Phone" size={18} />
+                  <a href="tel:+79997654321" className="hover:text-primary transition-colors">
+                    +7 (999) 765-43-21
+                  </a>
+                </div>
+                <div className="flex items-center justify-center gap-2 text-muted-foreground">
+                  <Icon name="Mail" size={18} />
+                  <a href="mailto:dmitry@example.com" className="hover:text-primary transition-colors">
+                    dmitry@example.com
+                  </a>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="py-12 px-4 text-center">
+        <div className="max-w-2xl mx-auto">
+          <Icon name="Heart" size={32} className="mx-auto text-primary mb-4" />
+          <p className="text-lg text-muted-foreground mb-2">
+            С любовью, Анна и Дмитрий
+          </p>
+          <p className="text-sm text-muted-foreground">
+            15 июня 2026
+          </p>
+        </div>
+      </footer>
     </div>
   );
-};
-
-export default Index;
+}
