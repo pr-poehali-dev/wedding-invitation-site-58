@@ -57,7 +57,7 @@ export default function Index() {
   });
 
   useEffect(() => {
-    const weddingDate = new Date('2026-06-15T14:00:00').getTime();
+    const weddingDate = new Date('2026-07-04T14:00:00').getTime();
 
     const timer = setInterval(() => {
       const now = new Date().getTime();
@@ -84,19 +84,23 @@ export default function Index() {
     <div className="min-h-screen bg-gradient-to-b from-background via-secondary/20 to-background">
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center px-4 py-20 overflow-hidden">
-        <div className="absolute inset-0 bg-[url('https://cdn.poehali.dev/projects/1a403886-d3ca-4c34-bac1-0cca7bf0cb31/files/cf8cb364-b44b-4a8a-9541-6d28439d92a1.jpg')] bg-cover bg-center opacity-10"></div>
+        <div className="absolute inset-0 flex items-center justify-center overflow-hidden">
+          <div className="text-[20rem] font-bold text-primary/5 select-none pointer-events-none whitespace-nowrap">
+            Свадьба
+          </div>
+        </div>
         
         <div className="relative z-10 text-center max-w-4xl animate-fade-in">
           <div className="mb-8">
             <Icon name="Heart" size={48} className="mx-auto text-primary mb-6" />
           </div>
           <h1 className="text-7xl md:text-8xl font-light mb-6 text-foreground">
-            Анна & Дмитрий
+            Алексей & Мария
           </h1>
           <div className="flex items-center justify-center gap-4 mb-8">
             <div className="h-px w-24 bg-primary/30"></div>
             <p className="text-2xl md:text-3xl text-muted-foreground font-light">
-              15 июня 2026
+              4 июля 2026
             </p>
             <div className="h-px w-24 bg-primary/30"></div>
           </div>
@@ -182,7 +186,7 @@ export default function Index() {
               </CardHeader>
               <CardContent className="text-center space-y-4">
                 <div>
-                  <p className="text-lg font-medium text-muted-foreground">15 июня 2026</p>
+                  <p className="text-lg font-medium text-muted-foreground">4 июля 2026</p>
                   <p className="text-2xl font-semibold mt-2">17:00</p>
                 </div>
                 <div className="pt-4 border-t">
@@ -240,7 +244,7 @@ export default function Index() {
             <Icon name="Mail" size={48} className="mx-auto text-primary mb-6" />
             <h2 className="text-5xl md:text-6xl mb-4">Подтверждение участия</h2>
             <p className="text-lg text-muted-foreground">
-              Пожалуйста, сообщите нам о своём решении до 1 июня 2026
+              Пожалуйста, сообщите нам о своём решении до 20 июня 2026
             </p>
           </div>
 
@@ -391,7 +395,7 @@ export default function Index() {
           <div className="grid md:grid-cols-2 gap-8">
             <Card className="border-2">
               <CardHeader>
-                <CardTitle className="text-2xl">Анна</CardTitle>
+                <CardTitle className="text-2xl">Мария</CardTitle>
               </CardHeader>
               <CardContent className="space-y-3">
                 <div className="flex items-center justify-center gap-2 text-muted-foreground">
@@ -402,8 +406,8 @@ export default function Index() {
                 </div>
                 <div className="flex items-center justify-center gap-2 text-muted-foreground">
                   <Icon name="Mail" size={18} />
-                  <a href="mailto:anna@example.com" className="hover:text-primary transition-colors">
-                    anna@example.com
+                  <a href="mailto:maria@example.com" className="hover:text-primary transition-colors">
+                    maria@example.com
                   </a>
                 </div>
               </CardContent>
@@ -411,7 +415,7 @@ export default function Index() {
 
             <Card className="border-2">
               <CardHeader>
-                <CardTitle className="text-2xl">Дмитрий</CardTitle>
+                <CardTitle className="text-2xl">Алексей</CardTitle>
               </CardHeader>
               <CardContent className="space-y-3">
                 <div className="flex items-center justify-center gap-2 text-muted-foreground">
@@ -422,8 +426,8 @@ export default function Index() {
                 </div>
                 <div className="flex items-center justify-center gap-2 text-muted-foreground">
                   <Icon name="Mail" size={18} />
-                  <a href="mailto:dmitry@example.com" className="hover:text-primary transition-colors">
-                    dmitry@example.com
+                  <a href="mailto:alexey@example.com" className="hover:text-primary transition-colors">
+                    alexey@example.com
                   </a>
                 </div>
               </CardContent>
@@ -437,10 +441,10 @@ export default function Index() {
         <div className="max-w-2xl mx-auto">
           <Icon name="Heart" size={32} className="mx-auto text-primary mb-4" />
           <p className="text-lg text-muted-foreground mb-2">
-            С любовью, Анна и Дмитрий
+            С любовью, Алексей и Мария
           </p>
           <p className="text-sm text-muted-foreground">
-            15 июня 2026
+            4 июля 2026
           </p>
         </div>
       </footer>
