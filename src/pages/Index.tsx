@@ -85,8 +85,8 @@ export default function Index() {
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center px-4 py-20 overflow-hidden">
         {/* Eucalyptus decorations */}
-        <div className="absolute top-0 left-0 w-[60vw] md:w-[45vw] aspect-square bg-[url('https://cdn.poehali.dev/projects/1a403886-d3ca-4c34-bac1-0cca7bf0cb31/bucket/eucalyptus-branch-1.png')] bg-contain bg-no-repeat opacity-60 animate-fade-in"></div>
-        <div className="absolute bottom-0 right-0 w-[50vw] md:w-[35vw] aspect-square bg-[url('https://cdn.poehali.dev/projects/1a403886-d3ca-4c34-bac1-0cca7bf0cb31/bucket/eucalyptus-branch-2.png')] bg-contain bg-no-repeat opacity-60 animate-fade-in" style={{ animationDelay: '0.2s' }}></div>
+        <div className="absolute top-0 left-0 w-[55vw] md:w-[43vw] aspect-square bg-[url('https://cdn.poehali.dev/projects/1a403886-d3ca-4c34-bac1-0cca7bf0cb31/bucket/eucalyptus-branch-1.png')] bg-contain bg-no-repeat opacity-60 animate-fade-in"></div>
+        <div className="absolute bottom-0 right-0 w-[50vw] md:w-[38vw] aspect-square bg-[url('https://cdn.poehali.dev/projects/1a403886-d3ca-4c34-bac1-0cca7bf0cb31/bucket/eucalyptus-branch-2.png')] bg-contain bg-no-repeat opacity-60 animate-fade-in" style={{ animationDelay: '0.2s' }}></div>
         
         <div className="relative z-10 text-center max-w-4xl animate-fade-in">
           <div className="mb-8">
@@ -149,7 +149,7 @@ export default function Index() {
       {/* Details Section */}
       <section className="relative py-20 px-4 bg-secondary/30">
         {/* Decorative branch */}
-        <div className="absolute top-0 left-0 w-[40vw] md:w-[28vw] aspect-square bg-[url('https://cdn.poehali.dev/projects/1a403886-d3ca-4c34-bac1-0cca7bf0cb31/bucket/eucalyptus-branch-2.png')] bg-contain bg-no-repeat opacity-60 rotate-180"></div>
+        <div className="absolute top-0 left-0 w-[40vw] md:w-[30vw] aspect-square bg-[url('https://cdn.poehali.dev/projects/1a403886-d3ca-4c34-bac1-0cca7bf0cb31/bucket/eucalyptus-branch-2.png')] bg-contain bg-no-repeat opacity-60 rotate-180"></div>
         <div className="max-w-6xl mx-auto relative z-10">
           <h2 className="text-5xl md:text-6xl text-center mb-16 animate-fade-in-up">
             О торжестве
@@ -236,7 +236,7 @@ export default function Index() {
       {/* RSVP Section */}
       <section id="rsvp" className="relative py-20 px-4">
         {/* Decorative branch */}
-        <div className="absolute top-0 left-0 w-[40vw] md:w-[28vw] aspect-square bg-[url('https://cdn.poehali.dev/projects/1a403886-d3ca-4c34-bac1-0cca7bf0cb31/bucket/eucalyptus-branch-2.png')] bg-contain bg-no-repeat opacity-60 rotate-180"></div>
+        <div className="absolute top-0 left-0 w-[40vw] md:w-[30vw] aspect-square bg-[url('https://cdn.poehali.dev/projects/1a403886-d3ca-4c34-bac1-0cca7bf0cb31/bucket/eucalyptus-branch-2.png')] bg-contain bg-no-repeat opacity-60 rotate-180"></div>
         <div className="max-w-2xl mx-auto relative z-10">
           <div className="text-center mb-12">
             <Icon name="Mail" size={48} className="mx-auto text-primary mb-6" />
@@ -437,8 +437,8 @@ export default function Index() {
       {/* Footer */}
       <footer className="relative py-12 px-4 text-center">
         {/* Decorative branch at bottom right */}
-        <div className="absolute bottom-0 right-0 w-[50vw] md:w-[35vw] aspect-square bg-[url('https://cdn.poehali.dev/projects/1a403886-d3ca-4c34-bac1-0cca7bf0cb31/bucket/eucalyptus-branch-1.png')] bg-contain bg-no-repeat opacity-60 rotate-180"></div>
-        <div className="max-w-2xl mx-auto">
+        <div className="absolute bottom-0 right-0 w-[48vw] md:w-[35vw] aspect-square bg-[url('https://cdn.poehali.dev/projects/1a403886-d3ca-4c34-bac1-0cca7bf0cb31/bucket/eucalyptus-branch-1.png')] bg-contain bg-no-repeat opacity-60 rotate-180"></div>
+        <div className="max-w-2xl mx-auto relative z-10">
           <Icon name="Heart" size={32} className="mx-auto text-primary mb-4" />
           <p className="text-lg text-muted-foreground mb-2">
             С любовью, Алексей и Мария
