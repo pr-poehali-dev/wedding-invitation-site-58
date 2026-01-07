@@ -85,8 +85,8 @@ export default function Index() {
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center px-4 py-20 overflow-hidden">
         {/* Eucalyptus decorations */}
-        <div className="absolute top-0 left-0 w-[50vw] md:w-[40vw] aspect-square bg-[url('https://cdn.poehali.dev/projects/1a403886-d3ca-4c34-bac1-0cca7bf0cb31/bucket/eucalyptus-branch-1.png')] bg-contain bg-no-repeat opacity-60 animate-fade-in"></div>
-        <div className="absolute bottom-0 right-0 w-[45vw] md:w-[35vw] aspect-square bg-[url('https://cdn.poehali.dev/projects/1a403886-d3ca-4c34-bac1-0cca7bf0cb31/bucket/eucalyptus-branch-2.png')] bg-contain bg-no-repeat opacity-60 animate-fade-in" style={{ animationDelay: '0.2s' }}></div>
+        <div className="absolute top-0 left-0 w-[60vw] md:w-[50vw] aspect-square bg-[url('https://cdn.poehali.dev/projects/1a403886-d3ca-4c34-bac1-0cca7bf0cb31/bucket/eucalyptus-branch-1.png')] bg-contain bg-no-repeat opacity-60 animate-fade-in"></div>
+        <div className="absolute bottom-0 right-0 w-[50vw] md:w-[40vw] aspect-square bg-[url('https://cdn.poehali.dev/projects/1a403886-d3ca-4c34-bac1-0cca7bf0cb31/bucket/eucalyptus-branch-2.png')] bg-contain bg-no-repeat opacity-60 animate-fade-in" style={{ animationDelay: '0.2s' }}></div>
         
         <div className="relative z-10 text-center max-w-4xl animate-fade-in">
           <div className="mb-8">
@@ -108,30 +108,30 @@ export default function Index() {
           
           {/* Countdown Timer */}
           <div className="mb-12 animate-scale-in">
-            <div className="grid grid-cols-4 gap-4 max-w-2xl mx-auto">
-              <div className="bg-card/80 backdrop-blur-sm rounded-2xl p-6 border-2 border-primary/20">
-                <div className="text-4xl md:text-5xl font-bold text-primary mb-2">
+            <div className="grid grid-cols-4 gap-2 md:gap-4 max-w-2xl mx-auto">
+              <div className="bg-card/80 backdrop-blur-sm rounded-xl md:rounded-2xl p-2 md:p-6 border-2 border-primary/20">
+                <div className="text-2xl md:text-5xl font-bold text-primary mb-1 md:mb-2">
                   {timeLeft.days}
                 </div>
-                <div className="text-sm md:text-base text-muted-foreground">дней</div>
+                <div className="text-xs md:text-base text-muted-foreground">дней</div>
               </div>
-              <div className="bg-card/80 backdrop-blur-sm rounded-2xl p-6 border-2 border-primary/20">
-                <div className="text-4xl md:text-5xl font-bold text-primary mb-2">
+              <div className="bg-card/80 backdrop-blur-sm rounded-xl md:rounded-2xl p-2 md:p-6 border-2 border-primary/20">
+                <div className="text-2xl md:text-5xl font-bold text-primary mb-1 md:mb-2">
                   {timeLeft.hours}
                 </div>
-                <div className="text-sm md:text-base text-muted-foreground">часов</div>
+                <div className="text-xs md:text-base text-muted-foreground">часов</div>
               </div>
-              <div className="bg-card/80 backdrop-blur-sm rounded-2xl p-6 border-2 border-primary/20">
-                <div className="text-4xl md:text-5xl font-bold text-primary mb-2">
+              <div className="bg-card/80 backdrop-blur-sm rounded-xl md:rounded-2xl p-2 md:p-6 border-2 border-primary/20">
+                <div className="text-2xl md:text-5xl font-bold text-primary mb-1 md:mb-2">
                   {timeLeft.minutes}
                 </div>
-                <div className="text-sm md:text-base text-muted-foreground">минут</div>
+                <div className="text-xs md:text-base text-muted-foreground">минут</div>
               </div>
-              <div className="bg-card/80 backdrop-blur-sm rounded-2xl p-6 border-2 border-primary/20">
-                <div className="text-4xl md:text-5xl font-bold text-primary mb-2">
+              <div className="bg-card/80 backdrop-blur-sm rounded-xl md:rounded-2xl p-2 md:p-6 border-2 border-primary/20">
+                <div className="text-2xl md:text-5xl font-bold text-primary mb-1 md:mb-2">
                   {timeLeft.seconds}
                 </div>
-                <div className="text-sm md:text-base text-muted-foreground">секунд</div>
+                <div className="text-xs md:text-base text-muted-foreground">секунд</div>
               </div>
             </div>
           </div>
@@ -149,7 +149,7 @@ export default function Index() {
       {/* Details Section */}
       <section className="relative py-20 px-4 bg-secondary/30">
         {/* Decorative branch */}
-        <div className="absolute top-0 left-0 w-[35vw] md:w-[25vw] aspect-square bg-[url('https://cdn.poehali.dev/projects/1a403886-d3ca-4c34-bac1-0cca7bf0cb31/bucket/eucalyptus-branch-2.png')] bg-contain bg-no-repeat opacity-60 rotate-180"></div>
+        <div className="absolute top-0 left-0 w-[40vw] md:w-[30vw] aspect-square bg-[url('https://cdn.poehali.dev/projects/1a403886-d3ca-4c34-bac1-0cca7bf0cb31/bucket/eucalyptus-branch-2.png')] bg-contain bg-no-repeat opacity-60 rotate-180"></div>
         <div className="max-w-6xl mx-auto relative z-10">
           <h2 className="text-5xl md:text-6xl text-center mb-16 animate-fade-in-up">
             О торжестве
@@ -236,7 +236,7 @@ export default function Index() {
       {/* RSVP Section */}
       <section id="rsvp" className="relative py-20 px-4">
         {/* Decorative branch */}
-        <div className="absolute top-0 left-0 w-[35vw] md:w-[25vw] aspect-square bg-[url('https://cdn.poehali.dev/projects/1a403886-d3ca-4c34-bac1-0cca7bf0cb31/bucket/eucalyptus-branch-2.png')] bg-contain bg-no-repeat opacity-60 rotate-180"></div>
+        <div className="absolute top-0 left-0 w-[40vw] md:w-[30vw] aspect-square bg-[url('https://cdn.poehali.dev/projects/1a403886-d3ca-4c34-bac1-0cca7bf0cb31/bucket/eucalyptus-branch-2.png')] bg-contain bg-no-repeat opacity-60 rotate-180"></div>
         <div className="max-w-2xl mx-auto relative z-10">
           <div className="text-center mb-12">
             <Icon name="Mail" size={48} className="mx-auto text-primary mb-6" />
@@ -437,7 +437,7 @@ export default function Index() {
       {/* Footer */}
       <footer className="relative py-12 px-4 text-center">
         {/* Decorative branch at bottom right */}
-        <div className="absolute bottom-0 right-0 w-[45vw] md:w-[35vw] aspect-square bg-[url('https://cdn.poehali.dev/projects/1a403886-d3ca-4c34-bac1-0cca7bf0cb31/bucket/eucalyptus-branch-1.png')] bg-contain bg-no-repeat opacity-60 rotate-180"></div>
+        <div className="absolute bottom-0 right-0 w-[50vw] md:w-[40vw] aspect-square bg-[url('https://cdn.poehali.dev/projects/1a403886-d3ca-4c34-bac1-0cca7bf0cb31/bucket/eucalyptus-branch-1.png')] bg-contain bg-no-repeat opacity-60 rotate-180"></div>
         <div className="max-w-2xl mx-auto">
           <Icon name="Heart" size={32} className="mx-auto text-primary mb-4" />
           <p className="text-lg text-muted-foreground mb-2">
