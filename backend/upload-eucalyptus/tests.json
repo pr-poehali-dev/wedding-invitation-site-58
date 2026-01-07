@@ -1,0 +1,15 @@
+{
+  "tests": [
+    {
+      "name": "Upload eucalyptus images",
+      "method": "POST",
+      "path": "/",
+      "expectedStatus": 200,
+      "expectedBody": {
+        "success": true,
+        "images": "array"
+      },
+      "bodyMatcher": "partial"
+    }
+  ]
+}
