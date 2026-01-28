@@ -189,15 +189,17 @@ export default function Index() {
                   <p className="text-2xl font-semibold mt-2">15:00</p>
                 </div>
                 <div className="pt-4 border-t">
-                  <p className="text-lg text-muted-foreground">Поляна невест</p>
-                  <p className="text-sm text-muted-foreground mt-3">
-                    <Icon name="Car" size={18} className="inline mr-1" />
-                    Есть парковка
-                  </p>
-                  <p className="text-sm text-muted-foreground mt-1">
-                    <Icon name="Bus" size={18} className="inline mr-1" />
-                    Организован трансфер
-                  </p>
+                  <p className="text-lg text-muted-foreground mb-4">Поляна невест</p>
+                  <div className="bg-secondary/50 rounded-lg p-3 space-y-2">
+                    <p className="text-sm text-muted-foreground flex items-center justify-center">
+                      <Icon name="Car" size={18} className="mr-2" />
+                      Есть парковка
+                    </p>
+                    <p className="text-sm text-muted-foreground flex items-center justify-center">
+                      <Icon name="Bus" size={18} className="mr-2" />
+                      Организован трансфер
+                    </p>
+                  </div>
                 </div>
               </CardContent>
             </Card>
