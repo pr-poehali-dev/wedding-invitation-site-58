@@ -190,6 +190,14 @@ export default function Index() {
                 </div>
                 <div className="pt-4 border-t">
                   <p className="text-lg text-muted-foreground">Поляна невест</p>
+                  <p className="text-sm text-muted-foreground mt-3">
+                    <Icon name="Car" size={18} className="inline mr-1" />
+                    Есть парковка
+                  </p>
+                  <p className="text-sm text-muted-foreground mt-1">
+                    <Icon name="Bus" size={18} className="inline mr-1" />
+                    Организован трансфер
+                  </p>
                 </div>
               </CardContent>
             </Card>
