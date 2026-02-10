@@ -100,6 +100,41 @@ export default function Admin() {
     localStorage.removeItem('adminKey');
   };
 
+  const handleDelete = async (id: number) => {
+    if (!confirm('Вы уверены, что хотите удалить этот отклик?')) return;
+
+    try {
+      const response = await fetch(`https://functions.poehali.dev/df55c789-caa2-4966-8712-119b64b508ea?id=${id}`, {
+        method: 'DELETE',
+        headers: {
+          'X-Admin-Key': adminKey,
+        },
+      });
+
+      const data = await response.json();
+
+      if (response.ok && data.success) {
+        setResponses(responses.filter(r => r.id !== id));
+        toast({
+          title: "Удалено",
+          description: "Отклик успешно удален",
+        });
+      } else {
+        toast({
+          title: "Ошибка",
+          description: "Не удалось удалить отклик",
+          variant: "destructive"
+        });
+      }
+    } catch (error) {
+      toast({
+        title: "Ошибка",
+        description: "Не удалось подключиться к серверу",
+        variant: "destructive"
+      });
+    }
+  };
+
   const getDietaryText = (restrictions: string[], other: string) => {
     if (!restrictions || restrictions.length === 0) return 'Нет ограничений';
     
@@ -212,18 +247,28 @@ export default function Admin() {
               <Card key={response.id} className={response.attendance === 'yes' ? 'border-green-200' : 'border-red-200'}>
                 <CardHeader>
                   <div className="flex justify-between items-start">
-                    <div>
+                    <div className="flex-1">
                       <CardTitle className="text-xl">{response.name}</CardTitle>
                       <CardDescription className="mt-1">
                         {new Date(response.created_at).toLocaleString('ru-RU')}
                       </CardDescription>
                     </div>
-                    <div className={`px-3 py-1 rounded-full text-sm font-medium ${
-                      response.attendance === 'yes' 
-                        ? 'bg-green-100 text-green-700' 
-                        : 'bg-red-100 text-red-700'
-                    }`}>
-                      {response.attendance === 'yes' ? 'Придёт' : 'Не придёт'}
+                    <div className="flex items-center gap-2">
+                      <div className={`px-3 py-1 rounded-full text-sm font-medium ${
+                        response.attendance === 'yes' 
+                          ? 'bg-green-100 text-green-700' 
+                          : 'bg-red-100 text-red-700'
+                      }`}>
+                        {response.attendance === 'yes' ? 'Придёт' : 'Не придёт'}
+                      </div>
+                      <Button
+                        variant="ghost"
+                        size="icon"
+                        onClick={() => handleDelete(response.id)}
+                        className="h-8 w-8 text-muted-foreground hover:text-destructive"
+                      >
+                        <Icon name="Trash2" size={16} />
+                      </Button>
                     </div>
                   </div>
                 </CardHeader>

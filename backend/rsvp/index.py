@@ -12,7 +12,7 @@ def handler(event: dict, context) -> dict:
             'statusCode': 200,
             'headers': {
                 'Access-Control-Allow-Origin': '*',
-                'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
+                'Access-Control-Allow-Methods': 'GET, POST, DELETE, OPTIONS',
                 'Access-Control-Allow-Headers': 'Content-Type, X-Admin-Key'
             },
             'body': ''
@@ -102,6 +102,36 @@ def handler(event: dict, context) -> dict:
                 'statusCode': 200,
                 'headers': {'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*'},
                 'body': json.dumps({'responses': responses})
+            }
+        
+        elif method == 'DELETE':
+            admin_key = event.get('headers', {}).get('X-Admin-Key', '')
+            expected_key = os.environ.get('ADMIN_KEY', 'changeme')
+            
+            if admin_key != expected_key:
+                return {
+                    'statusCode': 401,
+                    'headers': {'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*'},
+                    'body': json.dumps({'error': 'Unauthorized'})
+                }
+            
+            params = event.get('queryStringParameters', {})
+            response_id = params.get('id', '')
+            
+            if not response_id:
+                return {
+                    'statusCode': 400,
+                    'headers': {'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*'},
+                    'body': json.dumps({'error': 'Response ID is required'})
+                }
+            
+            with conn.cursor() as cur:
+                cur.execute('DELETE FROM rsvp_responses WHERE id = %s', (response_id,))
+            
+            return {
+                'statusCode': 200,
+                'headers': {'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*'},
+                'body': json.dumps({'success': True, 'message': 'Response deleted'})
             }
         
         else:
