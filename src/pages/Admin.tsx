@@ -9,7 +9,6 @@ import { useToast } from '@/hooks/use-toast';
 interface RSVPResponse {
   id: number;
   name: string;
-  email: string;
   phone: string;
   attendance: string;
   guests_count: number;
@@ -229,17 +228,9 @@ export default function Admin() {
                   </div>
                 </CardHeader>
                 <CardContent className="space-y-3">
-                  <div className="grid md:grid-cols-2 gap-4">
-                    <div className="flex items-center gap-2 text-sm">
-                      <Icon name="Mail" size={16} className="text-muted-foreground" />
-                      <span>{response.email}</span>
-                    </div>
-                    {response.phone && (
-                      <div className="flex items-center gap-2 text-sm">
-                        <Icon name="Phone" size={16} className="text-muted-foreground" />
-                        <span>{response.phone}</span>
-                      </div>
-                    )}
+                  <div className="flex items-center gap-2 text-sm">
+                    <Icon name="Phone" size={16} className="text-muted-foreground" />
+                    <span>{response.phone}</span>
                   </div>
 
                   {response.attendance === 'yes' && (

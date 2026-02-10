@@ -13,7 +13,6 @@ export default function Index() {
   const { toast } = useToast();
   const [formData, setFormData] = useState({
     name: '',
-    email: '',
     phone: '',
     attendance: '',
     guestsCount: '1',
@@ -43,7 +42,6 @@ export default function Index() {
         });
         setFormData({
           name: '',
-          email: '',
           phone: '',
           attendance: '',
           guestsCount: '1',
@@ -303,28 +301,16 @@ export default function Index() {
                   />
                 </div>
 
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div className="space-y-2">
-                    <Label htmlFor="email">Email *</Label>
-                    <Input
-                      id="email"
-                      type="email"
-                      required
-                      value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      placeholder="email@example.com"
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="phone">Телефон</Label>
-                    <Input
-                      id="phone"
-                      type="tel"
-                      value={formData.phone}
-                      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      placeholder="+7 (999) 123-45-67"
-                    />
-                  </div>
+                <div className="space-y-2">
+                  <Label htmlFor="phone">Телефон *</Label>
+                  <Input
+                    id="phone"
+                    type="tel"
+                    required
+                    value={formData.phone}
+                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                    placeholder="+7 (999) 123-45-67"
+                  />
                 </div>
 
                 <div className="space-y-3">
