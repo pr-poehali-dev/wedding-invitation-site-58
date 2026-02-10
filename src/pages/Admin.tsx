@@ -136,13 +136,12 @@ export default function Admin() {
   };
 
   const getDietaryText = (restrictions: string[], other: string) => {
-    if (!restrictions || restrictions.length === 0) return 'Нет ограничений';
+    if (!restrictions || restrictions.length === 0) return 'Нет предпочтений';
     
     const labels: Record<string, string> = {
       'vegetarian': 'Вегетарианское меню',
-      'vegan': 'Веганское меню',
-      'gluten-free': 'Без глютена',
-      'lactose-free': 'Без лактозы',
+      'meat': 'Предпочитает мясо',
+      'fish': 'Предпочитает рыбу',
       'allergies': 'Аллергии'
     };
 

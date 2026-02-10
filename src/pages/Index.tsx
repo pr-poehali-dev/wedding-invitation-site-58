@@ -337,27 +337,34 @@ export default function Index() {
 
                 {formData.attendance === 'yes' && (
                   <>
-                    <div className="space-y-2">
-                      <Label htmlFor="guests">Количество гостей</Label>
-                      <Input
-                        id="guests"
-                        type="number"
-                        min="1"
-                        max="5"
+                    <div className="space-y-3">
+                      <Label>Количество гостей</Label>
+                      <RadioGroup
                         value={formData.guestsCount}
-                        onChange={(e) => setFormData({ ...formData, guestsCount: e.target.value })}
-                      />
-                      <p className="text-sm text-muted-foreground">Включая вас</p>
+                        onValueChange={(value) => setFormData({ ...formData, guestsCount: value })}
+                      >
+                        <div className="flex items-center space-x-2">
+                          <RadioGroupItem value="1" id="guest1" />
+                          <Label htmlFor="guest1" className="font-normal cursor-pointer">
+                            1 человек (только я)
+                          </Label>
+                        </div>
+                        <div className="flex items-center space-x-2">
+                          <RadioGroupItem value="2" id="guest2" />
+                          <Label htmlFor="guest2" className="font-normal cursor-pointer">
+                            2 человека (я +1)
+                          </Label>
+                        </div>
+                      </RadioGroup>
                     </div>
 
                     <div className="space-y-3">
-                      <Label>Пищевые предпочтения и ограничения</Label>
+                      <Label>Пищевые предпочтения</Label>
                       <div className="space-y-3">
                         {[
                           { id: 'vegetarian', label: 'Вегетарианское меню' },
-                          { id: 'vegan', label: 'Веганское меню' },
-                          { id: 'gluten-free', label: 'Без глютена' },
-                          { id: 'lactose-free', label: 'Без лактозы' },
+                          { id: 'meat', label: 'Предпочитаю мясо' },
+                          { id: 'fish', label: 'Предпочитаю рыбу' },
                           { id: 'allergies', label: 'Аллергии (укажите ниже)' }
                         ].map((item) => (
                           <div key={item.id} className="flex items-center space-x-2">
