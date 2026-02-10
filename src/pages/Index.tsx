@@ -302,11 +302,10 @@ export default function Index() {
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="phone">Телефон *</Label>
+                  <Label htmlFor="phone">Телефон</Label>
                   <Input
                     id="phone"
                     type="tel"
-                    required
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                     placeholder="+7 (999) 123-45-67"

@@ -41,11 +41,11 @@ def handler(event: dict, context) -> dict:
             other_dietary = body.get('otherDietary', '').strip()
             message = body.get('message', '').strip()
             
-            if not name or not phone or not attendance:
+            if not name or not attendance:
                 return {
                     'statusCode': 400,
                     'headers': {'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*'},
-                    'body': json.dumps({'error': 'Name, phone and attendance are required'})
+                    'body': json.dumps({'error': 'Name and attendance are required'})
                 }
             
             if attendance not in ['yes', 'no']:
@@ -55,14 +55,16 @@ def handler(event: dict, context) -> dict:
                     'body': json.dumps({'error': 'Invalid attendance value'})
                 }
             
+            # Use empty string for phone if not provided (DB requires NOT NULL)
+            phone_value = phone if phone else ''
+            
             with conn.cursor() as cur:
-                # Add a space to trigger redeploy
                 cur.execute(
                     '''INSERT INTO rsvp_responses 
                        (name, email, phone, attendance, guests_count, dietary_restrictions, other_dietary, message) 
                        VALUES (%s, %s, %s, %s, %s, %s, %s, %s) 
                        RETURNING id''',
-                    (name, '', phone, attendance, guests_count, dietary_restrictions, other_dietary, message)
+                    (name, '', phone_value, attendance, guests_count, dietary_restrictions, other_dietary, message)
                 )
                 result = cur.fetchone()
                 response_id = result[0]
