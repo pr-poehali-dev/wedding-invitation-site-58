@@ -56,13 +56,14 @@ def handler(event: dict, context) -> dict:
                 }
             
             with conn.cursor() as cur:
+                # Add a space to trigger redeploy
                 cur.execute(
                     '''INSERT INTO rsvp_responses 
-                       (name, phone, attendance, guests_count, dietary_restrictions, other_dietary, message) 
-                       VALUES (%s, %s, %s, %s, %s, %s, %s) 
+                       (name, email, phone, attendance, guests_count, dietary_restrictions, other_dietary, message) 
+                       VALUES (%s, %s, %s, %s, %s, %s, %s, %s) 
                        RETURNING id''',
-                    (name, phone, attendance, guests_count, dietary_restrictions, other_dietary, message)
-                }
+                    (name, '', phone, attendance, guests_count, dietary_restrictions, other_dietary, message)
+                )
                 result = cur.fetchone()
                 response_id = result[0]
             
