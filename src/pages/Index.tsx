@@ -197,10 +197,13 @@ export default function Index() {
                 <div className="pt-4 border-t">
                   <p className="text-lg text-muted-foreground mb-4">Центр семьи "Казан"</p>
                   <div className="bg-secondary/50 rounded-lg p-3">
-                    <p className="text-sm text-muted-foreground flex items-center justify-center">
-                      <Icon name="Clock" size={18} className="mr-2" />
-                      Приходите в любое время от 12:30 до 13:00
-                    </p>
+                    <div className="text-sm text-muted-foreground text-center">
+                      <div className="flex items-center justify-center mb-1">
+                        <Icon name="Clock" size={18} className="mr-2" />
+                        <span>Приходите в любое время</span>
+                      </div>
+                      <div>от 12:30 до 13:00</div>
+                    </div>
                   </div>
                 </div>
               </CardContent>
