@@ -22,22 +22,49 @@ export default function Index() {
     message: ''
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "Спасибо за ответ! 💕",
-      description: "Мы получили вашу информацию и очень ждём вас на нашем празднике!",
-    });
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      attendance: '',
-      guestsCount: '1',
-      dietaryRestrictions: [],
-      otherDietary: '',
-      message: ''
-    });
+    
+    try {
+      const response = await fetch('https://functions.poehali.dev/df55c789-caa2-4966-8712-119b64b508ea', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (response.ok && data.success) {
+        toast({
+          title: "Спасибо за ответ! 💕",
+          description: "Мы получили вашу информацию и очень ждём вас на нашем празднике!",
+        });
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          attendance: '',
+          guestsCount: '1',
+          dietaryRestrictions: [],
+          otherDietary: '',
+          message: ''
+        });
+      } else {
+        toast({
+          title: "Ошибка",
+          description: "Не удалось отправить ответ. Попробуйте снова.",
+          variant: "destructive"
+        });
+      }
+    } catch (error) {
+      toast({
+        title: "Ошибка",
+        description: "Не удалось отправить ответ. Проверьте подключение к интернету.",
+        variant: "destructive"
+      });
+    }
   };
 
   const toggleDietary = (value: string) => {

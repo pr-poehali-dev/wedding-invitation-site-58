@@ -1,0 +1,41 @@
+{
+  "tests": [
+    {
+      "name": "Submit RSVP response - attending",
+      "method": "POST",
+      "path": "/",
+      "body": {
+        "name": "Иван Петров",
+        "email": "ivan@example.com",
+        "phone": "+79991234567",
+        "attendance": "yes",
+        "guestsCount": 2,
+        "dietaryRestrictions": ["vegetarian"],
+        "otherDietary": "Без орехов",
+        "message": "Поздравляем!"
+      },
+      "expectedStatus": 200,
+      "expectedBody": {
+        "success": true,
+        "message": "Response saved successfully"
+      },
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "Submit RSVP response - not attending",
+      "method": "POST",
+      "path": "/",
+      "body": {
+        "name": "Мария Иванова",
+        "email": "maria@example.com",
+        "attendance": "no",
+        "message": "К сожалению, не смогу присутствовать"
+      },
+      "expectedStatus": 200,
+      "expectedBody": {
+        "success": true
+      },
+      "bodyMatcher": "partial"
+    }
+  ]
+}
