@@ -234,7 +234,7 @@ export default function Index() {
                     </p>
                     <p className="text-sm text-muted-foreground flex items-center justify-center">
                       <Icon name="Bus" size={18} className="mr-2" />
-                      Трансфер от Центра семьи "Казан" до площадки отходит в 13:45
+                      Трансфер от Центра семьи "Казан" отходит в 13:45
                     </p>
                   </div>
                 </div>
