@@ -14,6 +14,8 @@ interface RSVPResponse {
   guests_count: number;
   dietary_restrictions: string[];
   other_dietary: string;
+  music_preferences: string;
+  return_transfer: string;
   message: string;
   created_at: string;
 }
@@ -288,6 +290,20 @@ export default function Admin() {
                         <Icon name="UtensilsCrossed" size={16} className="text-muted-foreground mt-0.5" />
                         <span>{getDietaryText(response.dietary_restrictions, response.other_dietary)}</span>
                       </div>
+
+                      {response.music_preferences && (
+                        <div className="flex items-start gap-2 text-sm">
+                          <Icon name="Music" size={16} className="text-muted-foreground mt-0.5" />
+                          <span>{response.music_preferences}</span>
+                        </div>
+                      )}
+
+                      {response.return_transfer && (
+                        <div className="flex items-start gap-2 text-sm">
+                          <Icon name="MapPin" size={16} className="text-muted-foreground mt-0.5" />
+                          <span>Обратный трансфер: {response.return_transfer}</span>
+                        </div>
+                      )}
                     </>
                   )}
 
