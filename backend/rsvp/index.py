@@ -39,6 +39,8 @@ def handler(event: dict, context) -> dict:
             guests_count = body.get('guestsCount', 1)
             dietary_restrictions = body.get('dietaryRestrictions', [])
             other_dietary = body.get('otherDietary', '').strip()
+            music_preferences = body.get('musicPreferences', '').strip()
+            return_transfer = body.get('returnTransfer', '').strip()
             message = body.get('message', '').strip()
             
             if not name or not attendance:
@@ -61,10 +63,10 @@ def handler(event: dict, context) -> dict:
             with conn.cursor() as cur:
                 cur.execute(
                     '''INSERT INTO rsvp_responses 
-                       (name, email, phone, attendance, guests_count, dietary_restrictions, other_dietary, message) 
-                       VALUES (%s, %s, %s, %s, %s, %s, %s, %s) 
+                       (name, email, phone, attendance, guests_count, dietary_restrictions, other_dietary, music_preferences, return_transfer, message) 
+                       VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s) 
                        RETURNING id''',
-                    (name, '', phone_value, attendance, guests_count, dietary_restrictions, other_dietary, message)
+                    (name, '', phone_value, attendance, guests_count, dietary_restrictions, other_dietary, music_preferences, return_transfer, message)
                 )
                 result = cur.fetchone()
                 response_id = result[0]
@@ -89,7 +91,7 @@ def handler(event: dict, context) -> dict:
             with conn.cursor(cursor_factory=RealDictCursor) as cur:
                 cur.execute(
                     '''SELECT id, name, phone, attendance, guests_count, 
-                              dietary_restrictions, other_dietary, message, 
+                              dietary_restrictions, other_dietary, music_preferences, return_transfer, message, 
                               created_at 
                        FROM rsvp_responses 
                        ORDER BY created_at DESC'''

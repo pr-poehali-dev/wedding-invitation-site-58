@@ -18,6 +18,8 @@ export default function Index() {
     guestsCount: '1',
     dietaryRestrictions: [] as string[],
     otherDietary: '',
+    musicPreferences: '',
+    returnTransfer: '',
     message: ''
   });
 
@@ -47,6 +49,8 @@ export default function Index() {
           guestsCount: '1',
           dietaryRestrictions: [],
           otherDietary: '',
+          musicPreferences: '',
+          returnTransfer: '',
           message: ''
         });
       } else {
@@ -200,9 +204,8 @@ export default function Index() {
                     <div className="text-sm text-muted-foreground text-center">
                       <div className="flex items-center justify-center mb-1">
                         <Icon name="Clock" size={18} className="mr-2" />
-                        <span>Приходите в любое время</span>
+                        <span>Ждём вас ко времени, указанном в приглашении</span>
                       </div>
-                      <div>от 12:30 до 13:00</div>
                     </div>
                   </div>
                 </div>
@@ -231,7 +234,7 @@ export default function Index() {
                     </p>
                     <p className="text-sm text-muted-foreground flex items-center justify-center">
                       <Icon name="Bus" size={18} className="mr-2" />
-                      Организован трансфер
+                      Трансфер от Центра семьи "Казан" до площадки отходит в 13:45
                     </p>
                   </div>
                 </div>
@@ -248,30 +251,9 @@ export default function Index() {
           <h2 className="text-5xl md:text-6xl mb-8">Дресс-код</h2>
           <Card className="border-2">
             <CardContent className="pt-6">
-              <p className="text-xl text-muted-foreground mb-6 leading-relaxed">
-                Приветствуется элегантная одежда в классическом стиле
+              <p className="text-xl text-muted-foreground leading-relaxed">
+                Приходите так, как вам будет удобно гулять по летнему полю. Каблучкам можно дать выходной.
               </p>
-              <div className="grid md:grid-cols-3 gap-6 mt-8">
-                <div>
-                  <div className="w-20 h-20 rounded-full bg-primary/20 mx-auto mb-3 flex items-center justify-center">
-                    <div className="w-12 h-12 rounded-full bg-primary"></div>
-                  </div>
-                  <p className="font-medium">Золотистый</p>
-                </div>
-                <div>
-                  <div className="w-20 h-20 rounded-full bg-secondary mx-auto mb-3 flex items-center justify-center">
-                    <div className="w-12 h-12 rounded-full bg-accent"></div>
-                  </div>
-                  <p className="font-medium">Зелёный</p>
-                </div>
-                <div>
-                  <div className="w-20 h-20 rounded-full bg-muted mx-auto mb-3 flex items-center justify-center">
-                    <div className="w-12 h-12 rounded-full bg-background border-2 border-primary"></div>
-                  </div>
-                  <p className="font-medium">Белый</p>
-                </div>
-              </div>
-
             </CardContent>
           </Card>
         </div>
@@ -397,6 +379,29 @@ export default function Index() {
                     </div>
                   </>
                 )}
+
+                <div className="space-y-2">
+                  <Label htmlFor="musicPreferences">Музыкальные предпочтения</Label>
+                  <p className="text-sm text-muted-foreground">Если у вас есть свои любимые мелодии, то можете предложить их для нашего плейлиста</p>
+                  <Textarea
+                    id="musicPreferences"
+                    value={formData.musicPreferences}
+                    onChange={(e) => setFormData({ ...formData, musicPreferences: e.target.value })}
+                    placeholder="Название песен или исполнителей..."
+                    rows={3}
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="returnTransfer">Обратный трансфер</Label>
+                  <p className="text-sm text-muted-foreground">Укажите район или улицу в Казани, куда вы собираетесь отправиться после праздника, чтобы мы смогли подобрать наиболее удобные точки для остановки обратного трансфера</p>
+                  <Input
+                    id="returnTransfer"
+                    value={formData.returnTransfer}
+                    onChange={(e) => setFormData({ ...formData, returnTransfer: e.target.value })}
+                    placeholder="Например: Вахитовский район, ул. Баумана..."
+                  />
+                </div>
 
                 <div className="space-y-2">
                   <Label htmlFor="message">Пожелания молодожёнам</Label>
