@@ -189,7 +189,7 @@ export default function Index() {
             <Card className="animate-scale-in border-2 hover:shadow-xl transition-shadow">
               <CardHeader className="text-center">
                 <div className="mx-auto mb-4">
-                  <img src="https://cdn.poehali.dev/files/0ccf35e7-2d65-4583-b10a-ba1a1ba44b7f.png" alt="Казан" className="w-10 h-10 mx-auto object-contain" />
+                  <img src="https://cdn.poehali.dev/files/0ccf35e7-2d65-4583-b10a-ba1a1ba44b7f.png" alt="Казан" className="w-12 h-12 mx-auto object-contain" />
                 </div>
                 <CardTitle className="text-3xl">Церемония</CardTitle>
               </CardHeader>
