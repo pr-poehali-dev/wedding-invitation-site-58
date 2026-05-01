@@ -378,28 +378,6 @@ export default function Index() {
                         </div>
                       )}
                     </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="musicPreferences">Музыкальные предпочтения</Label>
-                      <p className="text-sm text-muted-foreground">Если у вас есть свои любимые мелодии, то можете предложить их для нашего плейлиста</p>
-                      <Textarea
-                        id="musicPreferences"
-                        value={formData.musicPreferences}
-                        onChange={(e) => setFormData({ ...formData, musicPreferences: e.target.value })}
-                        placeholder="Название песен или исполнителей..."
-                        rows={3}
-                      />
-                    </div>
-
-                    <div className="space-y-2">
-                      <Label htmlFor="returnTransfer">Обратный трансфер</Label>
-                      <p className="text-sm text-muted-foreground">Укажите район или улицу в Казани, куда вы собираетесь отправиться после праздника, чтобы мы смогли подобрать наиболее удобные точки для остановки обратного трансфера</p>
-                      <Input
-                        id="returnTransfer"
-                        value={formData.returnTransfer}
-                        onChange={(e) => setFormData({ ...formData, returnTransfer: e.target.value })}
-                        placeholder="Например: Вахитовский район, ул. Баумана..."
-                      />
-                    </div>
 
                     <div className="space-y-3">
                       <Label>Что насчёт детей?</Label>
@@ -426,6 +404,29 @@ export default function Index() {
                           </Label>
                         </div>
                       </RadioGroup>
+                    </div>
+
+                    <div className="space-y-2">
+                      <Label htmlFor="musicPreferences">Музыкальные предпочтения</Label>
+                      <p className="text-sm text-muted-foreground">Если у вас есть свои любимые мелодии, то можете предложить их для нашего плейлиста</p>
+                      <Textarea
+                        id="musicPreferences"
+                        value={formData.musicPreferences}
+                        onChange={(e) => setFormData({ ...formData, musicPreferences: e.target.value })}
+                        placeholder="Название песен или исполнителей..."
+                        rows={3}
+                      />
+                    </div>
+
+                    <div className="space-y-2">
+                      <Label htmlFor="returnTransfer">Обратный трансфер</Label>
+                      <p className="text-sm text-muted-foreground">Укажите район или улицу в Казани, куда вы собираетесь отправиться после праздника, чтобы мы смогли подобрать наиболее удобные точки для остановки обратного трансфера</p>
+                      <Input
+                        id="returnTransfer"
+                        value={formData.returnTransfer}
+                        onChange={(e) => setFormData({ ...formData, returnTransfer: e.target.value })}
+                        placeholder="Например: Вахитовский район, ул. Баумана..."
+                      />
                     </div>
                   </>
                 )}
