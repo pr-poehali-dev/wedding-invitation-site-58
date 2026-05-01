@@ -42,6 +42,8 @@ def handler(event: dict, context) -> dict:
             music_preferences = body.get('musicPreferences', '').strip()
             return_transfer = body.get('returnTransfer', '').strip()
             children = body.get('children', '').strip()
+            children_count_raw = body.get('childrenCount', '')
+            children_count = int(children_count_raw) if str(children_count_raw).strip().isdigit() else None
             message = body.get('message', '').strip()
             
             if not name or not attendance:
@@ -64,10 +66,10 @@ def handler(event: dict, context) -> dict:
             with conn.cursor() as cur:
                 cur.execute(
                     '''INSERT INTO rsvp_responses 
-                       (name, email, phone, attendance, guests_count, dietary_restrictions, other_dietary, music_preferences, return_transfer, children, message) 
-                       VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s) 
+                       (name, email, phone, attendance, guests_count, dietary_restrictions, other_dietary, music_preferences, return_transfer, children, children_count, message) 
+                       VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s) 
                        RETURNING id''',
-                    (name, '', phone_value, attendance, guests_count, dietary_restrictions, other_dietary, music_preferences, return_transfer, children, message)
+                    (name, '', phone_value, attendance, guests_count, dietary_restrictions, other_dietary, music_preferences, return_transfer, children, children_count, message)
                 )
                 result = cur.fetchone()
                 response_id = result[0]
@@ -92,7 +94,7 @@ def handler(event: dict, context) -> dict:
             with conn.cursor(cursor_factory=RealDictCursor) as cur:
                 cur.execute(
                     '''SELECT id, name, phone, attendance, guests_count, 
-                              dietary_restrictions, other_dietary, music_preferences, return_transfer, children, message, 
+                              dietary_restrictions, other_dietary, music_preferences, return_transfer, children, children_count, message, 
                               created_at 
                        FROM rsvp_responses 
                        ORDER BY created_at DESC'''

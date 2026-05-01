@@ -17,6 +17,7 @@ interface RSVPResponse {
   music_preferences: string;
   return_transfer: string;
   children: string;
+  children_count: number | null;
   message: string;
   created_at: string;
 }
@@ -313,7 +314,7 @@ export default function Admin() {
                             no_children: 'Буду без детей',
                             maybe_children: 'Возможно придётся взять детей с собой',
                             with_children: 'Буду с детьми'
-                          }[response.children] || response.children}</span>
+                          }[response.children] || response.children}{response.children_count ? ` (${response.children_count} чел.)` : ''}</span>
                         </div>
                       )}
                     </>

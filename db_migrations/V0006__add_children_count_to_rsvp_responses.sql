@@ -1,0 +1,1 @@
+ALTER TABLE t_p40416390_wedding_invitation_s.rsvp_responses ADD COLUMN children_count integer NULL;

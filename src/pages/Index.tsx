@@ -21,6 +21,7 @@ export default function Index() {
     musicPreferences: '',
     returnTransfer: '',
     children: '',
+    childrenCount: '',
     message: ''
   });
 
@@ -404,6 +405,20 @@ export default function Index() {
                           </Label>
                         </div>
                       </RadioGroup>
+
+                      {(formData.children === 'maybe_children' || formData.children === 'with_children') && (
+                        <div className="space-y-2 mt-2">
+                          <Label htmlFor="childrenCount">Количество детей</Label>
+                          <Input
+                            id="childrenCount"
+                            value={formData.childrenCount}
+                            onChange={(e) => setFormData({ ...formData, childrenCount: e.target.value })}
+                            placeholder="Например: 2"
+                            type="number"
+                            min="1"
+                          />
+                        </div>
+                      )}
                     </div>
 
                     <div className="space-y-2">
