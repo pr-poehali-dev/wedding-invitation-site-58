@@ -251,7 +251,7 @@ export default function Index() {
         <div className="max-w-4xl mx-auto text-center">
           <Icon name="Shirt" size={48} className="mx-auto text-primary mb-6" />
           <h2 className="text-5xl md:text-6xl mb-8">Дресс-код</h2>
-          <Card className="border-2">
+          <Card className="border-2 hover:shadow-xl transition-shadow">
             <CardContent className="pt-6">
               <p className="text-xl text-muted-foreground leading-relaxed">
                 Приходите так, как вам будет удобно гулять по летнему полю. Каблучкам можно дать выходной.
@@ -477,7 +477,7 @@ export default function Index() {
           </p>
           
           <div className="grid md:grid-cols-2 gap-8">
-            <Card className="border-2">
+            <Card className="border-2 hover:shadow-xl transition-shadow">
               <CardHeader>
                 <CardTitle className="text-2xl">Мария</CardTitle>
               </CardHeader>
@@ -497,7 +497,7 @@ export default function Index() {
               </CardContent>
             </Card>
 
-            <Card className="border-2">
+            <Card className="border-2 hover:shadow-xl transition-shadow">
               <CardHeader>
                 <CardTitle className="text-2xl">Алексей</CardTitle>
               </CardHeader>
