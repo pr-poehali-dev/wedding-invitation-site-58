@@ -16,6 +16,7 @@ interface RSVPResponse {
   other_dietary: string;
   music_preferences: string;
   return_transfer: string;
+  children: string;
   message: string;
   created_at: string;
 }
@@ -302,6 +303,17 @@ export default function Admin() {
                         <div className="flex items-start gap-2 text-sm">
                           <Icon name="MapPin" size={16} className="text-muted-foreground mt-0.5" />
                           <span>Обратный трансфер: {response.return_transfer}</span>
+                        </div>
+                      )}
+
+                      {response.children && (
+                        <div className="flex items-start gap-2 text-sm">
+                          <Icon name="Baby" size={16} className="text-muted-foreground mt-0.5" />
+                          <span>Дети: {{
+                            no_children: 'Буду без детей',
+                            maybe_children: 'Возможно придётся взять детей с собой',
+                            with_children: 'Буду с детьми'
+                          }[response.children] || response.children}</span>
                         </div>
                       )}
                     </>

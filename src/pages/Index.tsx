@@ -20,6 +20,7 @@ export default function Index() {
     otherDietary: '',
     musicPreferences: '',
     returnTransfer: '',
+    children: '',
     message: ''
   });
 
@@ -398,6 +399,33 @@ export default function Index() {
                         onChange={(e) => setFormData({ ...formData, returnTransfer: e.target.value })}
                         placeholder="Например: Вахитовский район, ул. Баумана..."
                       />
+                    </div>
+
+                    <div className="space-y-3">
+                      <Label>Что насчёт детей?</Label>
+                      <RadioGroup
+                        value={formData.children}
+                        onValueChange={(value) => setFormData({ ...formData, children: value })}
+                      >
+                        <div className="flex items-center space-x-2">
+                          <RadioGroupItem value="no_children" id="children1" />
+                          <Label htmlFor="children1" className="font-normal cursor-pointer">
+                            Буду без детей
+                          </Label>
+                        </div>
+                        <div className="flex items-center space-x-2">
+                          <RadioGroupItem value="maybe_children" id="children2" />
+                          <Label htmlFor="children2" className="font-normal cursor-pointer">
+                            Детей есть с кем оставить, но возможно придётся взять с собой на свадьбу
+                          </Label>
+                        </div>
+                        <div className="flex items-center space-x-2">
+                          <RadioGroupItem value="with_children" id="children3" />
+                          <Label htmlFor="children3" className="font-normal cursor-pointer">
+                            Детей оставить не с кем! Буду с детьми
+                          </Label>
+                        </div>
+                      </RadioGroup>
                     </div>
                   </>
                 )}
